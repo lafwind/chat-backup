@@ -10,12 +10,12 @@ RUN exec $SHELL
 RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 RUN echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 RUN exec $SHELL
-RUN source ~/.bashrc
-RUN rbenv install 2.3.1
-RUN rbenv global 2.3.1
-RUN ruby -v
-RUN gem install --no-rdoc --no-ri bundler
-RUN rbenv rehash
+## RUN source ~/.bashrc
+## RUN rbenv install 2.3.1
+## RUN rbenv global 2.3.1
+## RUN ruby -v
+## RUN gem install --no-rdoc --no-ri bundler
+## RUN rbenv rehash
 # WORKDIR /tmp
 # RUN wget http://cache.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
 # RUN tar -zxvf ruby-2.2.2.tar.gz
@@ -32,15 +32,15 @@ RUN rbenv rehash
 
 # RUN mkdir -pv tmp/{pids,sockets}
 # ENV RAILS_ENV docker
-# RUN bundle install -V
-# RUN chmod 777 start.sh
-# ENV DB_HOST ------
-# ENV DB_USERNAME ------
-# ENV DB_PASSWORD ------
-# ENV REDIS_PASSWORD ------
-# ENV REDIS_PORT ------
-# ENV REDIS_HOST ------
-# RUN rails assets:precompile
-# EXPOSE 80
-#
-# CMD ["sh", "/my_app/chat/start.sh"]
+## RUN bundle install -V
+## RUN chmod 777 start.sh
+## ENV DB_HOST ------
+## ENV DB_USERNAME ------
+## ENV DB_PASSWORD ------
+## ENV REDIS_PASSWORD ------
+## ENV REDIS_PORT ------
+## ENV REDIS_HOST ------
+## RUN rails assets:precompile
+## EXPOSE 80
+##
+## CMD ["sh", "/my_app/chat/start.sh"]
