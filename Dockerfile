@@ -1,3 +1,4 @@
+FROM ubuntu:14.04
 MAINTAINER Lafwind Li "lafwind@gmail.com"
 RUN apt-get update
 RUN apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
@@ -24,7 +25,7 @@ RUN mkdir -pv /my_app
 WORKDIR /my_app
 ADD ./ /my_app/chat
 WORKDIR /my_app/chat
-RUN mkdir -pv tmp/{pids,sockets}
+# RUN mkdir -pv tmp/{pids,sockets}
 RUN gem install --no-rdoc --no-ri bundler
 # ENV RAILS_ENV docker
 RUN bundle install -V
