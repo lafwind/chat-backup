@@ -11,9 +11,9 @@ RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-buil
 RUN echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 RUN exec $SHELL
 ## RUN source ~/.bashrc
-## RUN rbenv install 2.3.1
-## RUN rbenv global 2.3.1
-## RUN ruby -v
+RUN rbenv install 2.3.1
+RUN rbenv global 2.3.1
+RUN ruby -v
 ## RUN gem install --no-rdoc --no-ri bundler
 ## RUN rbenv rehash
 # WORKDIR /tmp
