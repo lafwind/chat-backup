@@ -10,7 +10,7 @@ ENV PATH /root/.rbenv/bin:$PATH
 RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh
 RUN echo 'eval "$(rbenv init -)"' >> .bashrc
 RUN echo 'eval "$(rbenv init -)"' >> $HOME/.bash_profile
-RUN source $HOME/.bash_profile
+## RUN source $HOME/.bash_profile
 
 RUN rbenv install 2.3.1
 RUN rbenv global 2.3.1
