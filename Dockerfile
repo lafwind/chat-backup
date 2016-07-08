@@ -15,6 +15,8 @@ RUN source ~/.bashrc
 RUN rbenv install 2.3.1
 RUN rbenv global 2.3.1
 RUN ruby -v
+RUN gem install --no-rdoc --no-ri bundler
+RUN rbenv rehash
 # WORKDIR /tmp
 # RUN wget http://cache.ruby-lang.org/pub/ruby/2.2/ruby-2.2.2.tar.gz
 # RUN tar -zxvf ruby-2.2.2.tar.gz
@@ -28,7 +30,6 @@ WORKDIR /my_app
 ADD ./ /my_app/chat
 WORKDIR /my_app/chat
 # RUN mkdir -pv tmp/{pids,sockets}
-RUN gem install --no-rdoc --no-ri bundler
 # ENV RAILS_ENV docker
 RUN bundle install -V
 RUN chmod 777 start.sh
