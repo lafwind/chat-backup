@@ -14,7 +14,8 @@ RUN echo 'eval "$(rbenv init -)"' >> $HOME/.bash_profile
 
 RUN rbenv install 2.3.1
 RUN rbenv global 2.3.1
-## RUN ruby -v
+ENV PATH /root/.rbenv/shims:$PATH
+RUN ruby -v
 RUN gem install --no-rdoc --no-ri bundler
 RUN rbenv rehash
 
