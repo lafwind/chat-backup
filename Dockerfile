@@ -21,7 +21,8 @@ RUN rbenv global 2.3.1
 ENV PATH /root/.rbenv/shims:$PATH
 RUN ruby -v
 RUN gem install --no-rdoc --no-ri bundler
-RUN gem install therubyracer --no-ri --no-rdoc -V
+RUN gem install execjs
+RUN gem install therubyracer
 RUN rbenv rehash
 
 ## RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
