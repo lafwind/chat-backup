@@ -2,6 +2,7 @@ FROM ubuntu:14.04
 MAINTAINER Lafwind Li "lafwind@gmail.com"
 RUN apt-get update
 RUN apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libpq-dev postgresql nodejs
+ENV PATH /usr/bin/node:$PATH
 RUN node -v
 
 ## RUN /etc/init.d/postgresql status
