@@ -23,7 +23,7 @@ test:
 production:
   <<: *default
   # database: db/chat_production_postgresql
-  host:     <%= ENV["POSTGRESQL_PORT_5432_TCP"] %>
+  host:     <%= ENV["POSTGRESQL_PORT_5432_TCP_ADDR"] %>
   port:     <%= ENV["POSTGRESQL_PORT_5432_TCP_PORT"] %>
   database: <%= ENV["POSTGRESQL_INSTANCE_NAME"] %>
   username: <%= ENV["POSTGRESQL_USERNAME"] %>
