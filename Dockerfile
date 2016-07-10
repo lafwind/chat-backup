@@ -1,13 +1,17 @@
 FROM ubuntu:14.04
 MAINTAINER Lafwind Li "lafwind@gmail.com"
 RUN apt-get update
-# RUN apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libpq-dev postgresql nodejs
-RUN apt-get -y install gcc g++ make automake autoconf make libc6-dev patch openssl ca-certificates libreadline6 libreadline6-dev curl zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libgdbm-dev libncurses5-dev libtool bison pkg-config libffi-dev imagemagick redis-server zlib1g-dev openssl openssh-server curl libedit-dev wget git-core libpq-dev postgresql nodejs
+RUN apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libpq-dev postgresql
+# RUN apt-get -y install gcc g++ make automake autoconf make libc6-dev patch openssl ca-certificates libreadline6 libreadline6-dev curl zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libgdbm-dev libncurses5-dev libtool bison pkg-config libffi-dev imagemagick redis-server zlib1g-dev openssl openssh-server curl libedit-dev wget git-core libpq-dev postgresql nodejs
+
+RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+RUN apt-get install -y nodejs
+
 ENV PATH /usr/bin/nodejs:$PATH
 RUN nodejs -v
 
-## RUN /etc/init.d/postgresql status
 RUN cd
+
 RUN git clone https://github.com/rbenv/rbenv.git /root/.rbenv
 RUN git clone https://github.com/rbenv/ruby-build.git /root/.rbenv/plugins/ruby-build
 RUN ./root/.rbenv/plugins/ruby-build/install.sh
