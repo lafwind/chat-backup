@@ -4,9 +4,9 @@ RUN apt-get update
 RUN apt-get -y install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libpq-dev postgresql
 # RUN apt-get -y install gcc g++ make automake autoconf make libc6-dev patch openssl ca-certificates libreadline6 libreadline6-dev curl zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libgdbm-dev libncurses5-dev libtool bison pkg-config libffi-dev imagemagick redis-server zlib1g-dev openssl openssh-server curl libedit-dev wget git-core libpq-dev postgresql nodejs
 
+# js runtime
 RUN curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN apt-get install -y nodejs
-
 ENV PATH /usr/bin/nodejs:$PATH
 RUN nodejs -v
 
@@ -26,8 +26,6 @@ RUN rbenv global 2.3.1
 ENV PATH /root/.rbenv/shims:$PATH
 RUN ruby -v
 RUN gem install --no-rdoc --no-ri bundler
-RUN gem install execjs
-RUN gem install therubyracer
 RUN rbenv rehash
 
 ## RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
