@@ -1,8 +1,9 @@
 # Action Cable uses Redis by default to administer connections, channels, and sending/receiving messages over the WebSocket.
 production:
   adapter: redis
-  url: redis://<%= ENV['REDIS_PORT_6379_TCP_ADDR'] %>:<%= ENV['REDIS_PORT_6379_TCP_PORT'] %>
-  password: ENV['REDIS_PASSWORD']
+  url: <%= REDIS %>
+  # url: redis://<%= ENV['REDIS_PORT_6379_TCP_ADDR'] %>:<%= ENV['REDIS_PORT_6379_TCP_PORT'] %>
+  # password: ENV['REDIS_PASSWORD']
 
 development:
   adapter: redis
