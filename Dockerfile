@@ -60,6 +60,7 @@ WORKDIR /my_app/chat
 RUN bundle install -V
 ENV RACK_ENV="production" RAILS_ENV="production"
 ENV SECRET_KEY_BASE $(rails secret)
+ENV DEVISE_SECRET_KEY $(rails secret)
 RUN chmod 777 start.sh
 ## ENV DB_HOST ------
 ## ENV DB_USERNAME ------
